@@ -1,0 +1,29 @@
+  <h2 id="kit">Launch kit</h2>
+  <div class="tabs seg" id="kittabs"><button data-t="profile" aria-pressed="true">1 · Profile &amp; copy</button><button data-t="bm" aria-pressed="false">2 · Autofill bookmarklet</button><button data-t="track" aria-pressed="false">3 · Tracker</button><button data-t="export" aria-pressed="false">4 · Export data</button></div>
+
+  <div class="panel" data-pane="profile">
+    <p class="small">Write these once. They're saved in this browser only. Use Copy, or the bookmarklet in step 2.</p>
+    <div id="pf"></div>
+  </div>
+
+  <div class="panel" data-pane="bm" hidden>
+    <p>Drag this button to your bookmarks bar. Open a directory's submit form and click the bookmark. It fills the fields it recognises (name, URL, tagline, descriptions, email, socials, category, pricing) and outlines each one it filled.</p>
+    <p><a class="bm" id="bmlink" href="#">⤓ Fill launch form</a></p>
+    <ul class="plain small">
+      <li>It never submits anything. Check every field and press the site's own submit button yourself.</li>
+      <li>It skips fields that already have a value, and skips passwords, files and checkboxes.</li>
+      <li>Your profile is stored inside the bookmark itself. If you edit the profile, drag the button again.</li>
+      <li>Some sites (multi-step forms, rich-text editors, embedded iframes) won't fill completely. Use the Copy buttons there.</li>
+    </ul>
+  </div>
+
+  <div class="panel" data-pane="track" hidden>
+    <p class="small">Saved in this browser. Status options: to do, submitted, live, rejected, skipped.</p>
+    <div class="tablewrap"><table id="trk"><thead><tr><th>Channel</th><th>Status</th><th>Date</th><th>Notes</th></tr></thead><tbody></tbody></table></div>
+    <p style="margin-top:12px"><button class="copy" id="trkcsv">Download tracker CSV</button></p>
+  </div>
+
+  <div class="panel" data-pane="export" hidden>
+    <p>The whole dataset with sources and verification dates.</p>
+    <p><button class="copy" id="dcsv">Download CSV</button> <button class="copy" id="djson">Download JSON</button></p>
+  </div>

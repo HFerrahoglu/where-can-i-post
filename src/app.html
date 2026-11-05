@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Can I Post?</title>
+<meta name="description" content="Which launch channels will actually accept your post with a new account, AI-assisted text and a $0 budget. Rules verified 2026-11-05, every row linked to its source.">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--fg:#1b1b1a;--mut:#62605a;--line:#e3e0d8;--acc:#1f5eff;--acc-fg:#fff;--ok:#11803a;--ok-bg:#e6f4ea;--warn:#8a5a00;--warn-bg:#fdf1d8;--bad:#b3261e;--bad-bg:#fbe7e5;--chip:#efede7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1d1d1b;--fg:#ecebe6;--mut:#a3a199;--line:#33322e;--acc:#7aa2ff;--acc-fg:#0d0d0c;--ok:#6fd08f;--ok-bg:#16301f;--warn:#f0c062;--warn-bg:#33280f;--bad:#ff8a80;--bad-bg:#3a1a17;--chip:#2a2a27}}
+:root[data-theme="dark"]{--bg:#141413;--card:#1d1d1b;--fg:#ecebe6;--mut:#a3a199;--line:#33322e;--acc:#7aa2ff;--acc-fg:#0d0d0c;--ok:#6fd08f;--ok-bg:#16301f;--warn:#f0c062;--warn-bg:#33280f;--bad:#ff8a80;--bad-bg:#3a1a17;--chip:#2a2a27}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:8px 0 10px;letter-spacing:-.02em}
+h2{font-size:22px;margin:40px 0 12px;letter-spacing:-.01em}
+h3{font-size:17px;margin:0}
+p{margin:0 0 12px}
+a{color:var(--acc)}
+.lede{font-size:18px;color:var(--mut);max-width:680px}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.q{margin:0 0 14px}
+.q label.t{display:block;font-weight:600;margin-bottom:6px;font-size:15px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:14px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.sum{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+.pill{font-size:14px;font-weight:600;padding:5px 11px;border-radius:999px}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}.pill.warn{background:var(--warn-bg);color:var(--warn)}.pill.bad{background:var(--bad-bg);color:var(--bad)}
+.grp{margin-top:18px}
+.grp>h3{margin-bottom:8px;font-size:15px;color:var(--mut);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.card.ok{border-left-color:var(--ok)}.card.warn{border-left-color:var(--warn)}.card.bad{border-left-color:var(--bad)}
+.card summary{cursor:pointer;list-style:none;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.card summary::-webkit-details-marker{display:none}
+.card .nm{font-weight:600}
+.chip{font-size:12px;background:var(--chip);color:var(--mut);padding:2px 8px;border-radius:999px}
+.why{margin:6px 0 0;padding-left:18px;font-size:14.5px}
+.why li{margin:2px 0}
+.rule{margin-top:10px;font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:8px}
+.rule q{color:var(--fg)}
+.lock{border:1px dashed var(--line);border-radius:10px;padding:14px;margin-top:10px;color:var(--mut);font-size:15px}
+.btn{display:inline-block;font:inherit;font-weight:600;padding:11px 18px;border-radius:10px;background:var(--acc);color:var(--acc-fg);text-decoration:none;border:0;cursor:pointer}
+.btn.sec{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.price{font-size:30px;font-weight:700}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+ul.plain{padding-left:18px;margin:6px 0 12px}
+.small{font-size:14px;color:var(--mut)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:4px}
+.field .cnt{font-weight:400;color:var(--mut)}
+.field .cnt.over{color:var(--bad)}
+.row{display:flex;gap:6px}
+input[type=text],input[type=url],input[type=email],textarea,select{font:inherit;font-size:15px;width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+textarea{min-height:90px;resize:vertical}
+.copy{font:inherit;font-size:13px;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.tablewrap{overflow-x:auto}
+.bm{display:inline-block;padding:10px 14px;border:2px dashed var(--acc);border-radius:10px;font-weight:700;text-decoration:none;color:var(--acc)}
+footer{margin-top:48px;font-size:14px;color:var(--mut)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Launch-channel rules · verified 2026-11-05</div>
+  <h1>Where can I post my launch?</h1>
+  <p class="lede">Many launch channels quietly reject posts from new accounts or posts written with AI help. Tell this tool your situation and it shows which channels will take your post, which ones won't, and the rule behind each answer, with a link to the source.</p>
+
+  <h2 style="margin-top:28px">Your situation</h2>
+  <div class="panel" id="finder">
+    <div class="q"><label class="t">How old is your account on the platform?</label>
+      <div class="seg" data-k="age"><button data-v="0">Brand-new</button><button data-v="30">Under 90 days</button><button data-v="365">90+ days, some karma</button></div></div>
+    <div class="q"><label class="t">Was your post text written or edited with AI?</label>
+      <div class="seg" data-k="ai"><button data-v="yes">Yes</button><button data-v="no">No</button></div></div>
+    <div class="q"><label class="t">You need people to see it within</label>
+      <div class="seg" data-k="need"><button data-v="24h">24 hours</button><button data-v="week">A week</button><button data-v="any">No rush</button></div></div>
+    <div class="q" style="margin:0"><label class="t">Budget</label>
+      <div class="seg" data-k="budget"><button data-v="zero">$0</button><button data-v="paid">Can pay</button></div></div>
+  </div>
+
+  <div class="sum" id="sum" aria-live="polite"></div>
+  <div id="results"></div>
+  <div id="lockbox"></div>
+
+  <!--KIT-->
+
+  <!--SALES-->
+
+  <footer>
+    <p><strong>How this was made.</strong> This tool was researched and built by an AI agent (Claude, by Anthropic) during a public 24-hour experiment, with a human operator, Hamza Ferrahoğlu, who handles anything that needs a person. The full decision log is public: <a href="https://github.com/HFerrahoglu/24h-zero-budget-experiment">github.com/HFerrahoglu/24h-zero-budget-experiment</a>.</p>
+    <p><strong>About the data.</strong> Each row shows its source and whether that source is the platform's own page (<em>primary</em>), an archived copy (<em>archived</em>), or a third-party rules tracker (<em>secondary</em>). Rules change. This snapshot is from 2026-11-05 and future updates aren't promised. Check the source before you post. This isn't legal advice.</p>
+    <!--PRIVACY-->
+    <p>Contact: <a href="mailto:hferrahoglu@gmail.com">hferrahoglu@gmail.com</a></p>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const FULL = /*FULL*/false;
+const CHANNELS = /*DATA*/[];
+const LOCKED_COUNT = /*LOCKED*/0;
+const BUY_URL = "/*BUY*/";
+
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("on"),1800); }
+
+const state = Object.assign({age:"0", ai:"yes", need:"24h", budget:"zero"}, store.get("wcip_state", {}));
+
+const SPEED = {instant:0, same_day:1, days:2, weeks:3, months:4, unknown:null};
+const NEED_MAX = {"24h":1, "week":2, "any":9};
+const SRC_LABEL = {primary:"primary source", archived:"archived copy", secondary:"third-party tracker"};
+
+function verdict(c, s){
+  const bad=[], warn=[], unk=[];
+  const age = Number(s.age);
+  // account age
+  if (c.new_account === "closed" && age < 90) bad.push(c.new_account_note);
+  else if (c.min_account_days && age < c.min_account_days) bad.push(`Needs an account at least ${c.min_account_days} days old. ${c.new_account_note}`);
+  else if (c.new_account === "restricted" && age < 90 && !c.min_account_days) warn.push(c.new_account_note);
+  else if (c.new_account === "unknown") unk.push("account-age rules");
+  if (age === 0 && c.new_account === "open" && /filter|hide|reach/i.test(c.new_account_note)) warn.push(c.new_account_note);
+  // AI text
+  if (s.ai === "yes"){
+    if (c.ai_text === "banned") bad.push("Bans AI-written text. " + c.ai_note);
+    else if (c.ai_text === "disclose") warn.push("Allowed only with disclosure. " + c.ai_note);
+    else if (c.ai_text === "unknown") unk.push("AI-text policy");
+  }
+  // self promotion
+  if (c.self_promo === "banned") bad.push("No self-promotion. " + c.self_promo_note);
+  else if (c.self_promo === "limited") warn.push(c.self_promo_note);
+  else if (c.self_promo === "unknown") unk.push("self-promotion rules");
+  // speed
+  const sp = SPEED[c.time_to_visible];
+  if (sp === null || sp === undefined) unk.push("time to go live");
+  else if (sp > NEED_MAX[s.need]) bad.push("Too slow for your timeline. " + c.time_note);
+  else if (s.need === "24h" && sp === 1 && c.id !== "producthunt") warn.push(c.time_note);
+  // posting days
+  if (c.posting_days){
+    const day = new Date().toLocaleDateString("en-US",{weekday:"long"});
+    const days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+    const pd = c.posting_days.toLowerCase();
+    if (days.some(d => pd.includes(d))){
+      if (!pd.includes(day.toLowerCase())) (s.need === "24h" ? bad : warn).push(`Posting day: ${c.posting_days}. Today is ${day}.`);
+    } else warn.push(`Posting restriction: ${c.posting_days}.`);
+  }
+  // budget
+  if (s.budget === "zero" && c.cost === "paid") bad.push("Paid only. " + c.cost_note);
+  if (s.budget === "zero" && c.cost === "freemium" && sp !== null && sp > NEED_MAX[s.need]) warn.push("The fast lane costs money: " + c.cost_note);
+  const status = bad.length ? "bad" : (warn.length ? "warn" : "ok");
+  return {status, bad, warn, unk};
+}
+
+function render(){
+  document.querySelectorAll("#finder .seg").forEach(seg => {
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(state[seg.dataset.k] === b.dataset.v)));
+  });
+  const rows = CHANNELS.map(c => ({c, v: verdict(c, state)}));
+  const order = {ok:0, warn:1, bad:2};
+  rows.sort((a,b) => order[a.v.status]-order[b.v.status] || a.c.name.localeCompare(b.c.name));
+  const n = {ok:0,warn:0,bad:0}; rows.forEach(r => n[r.v.status]++);
+  $("#sum").innerHTML = `<span class="pill ok">${n.ok} open</span><span class="pill warn">${n.warn} with caveats</span><span class="pill bad">${n.bad} closed to you</span>`;
+  const groups = [["ok","Open to you"],["warn","Possible, with caveats"],["bad","Closed to you right now"]];
+  $("#results").innerHTML = groups.map(([k,t]) => {
+    const list = rows.filter(r => r.v.status === k);
+    if (!list.length) return "";
+    return `<div class="grp"><h3>${t}</h3>${list.map(r => card(r.c, r.v)).join("")}</div>`;
+  }).join("");
+  if (!FULL && LOCKED_COUNT){
+    $("#lockbox").innerHTML = `<div class="lock"><strong>${LOCKED_COUNT} more channels</strong> are in the full kit: more subreddits, launch directories (BetaList, Fazier, AlternativeTo, SaaSHub, Launching Next…), Hashnode, Bluesky, Shopify Community and Turkish forums. <a href="#kit" onclick="track('kitlink')">See what's in the kit ↓</a></div>`;
+  }
+  store.set("wcip_state", state);
+}
+
+function card(c, v){
+  const reasons = [...v.bad, ...v.warn].map(x => `<li>${esc(x)}</li>`).join("");
+  const unk = v.unk.length ? `<li class="small">Not verified: ${esc(v.unk.join(", "))}.</li>` : "";
+  const okline = (!reasons && !unk) ? `<li>No blocking rule found for your situation.</li>` : "";
+  const ruleLabel = c.quote_exact === false ? "Rule summary" : "Rule";
+  const ruleText = c.quote_exact === false ? esc(c.quote) : `<q>${esc(c.quote)}</q>`;
+  return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span></summary>
+    <ul class="why">${reasons}${unk}${okline}</ul>
+    <div class="rule">${ruleLabel}: ${ruleText}<br>Source: <a href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(new URL(c.source_url).hostname)}</a> · ${esc(SRC_LABEL[c.source_type]||c.source_type)} · checked ${esc(c.verified)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">go to channel</a></div></details>`;
+}
+
+document.querySelectorAll("#finder .seg").forEach(seg => seg.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state[seg.dataset.k] = b.dataset.v; render(); track("demo");
+}));
+
+/* ---------- anonymous counters (free page only) ---------- */
+/*TRACK*/
+render();
+</script>
+<!--KITJS-->
+</body>
+</html>

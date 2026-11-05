@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Can I Post?</title>
+<meta name="description" content="Which launch channels will actually accept your post with a new account, AI-assisted text and a $0 budget. Rules verified 2026-11-05, every row linked to its source.">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--fg:#1b1b1a;--mut:#62605a;--line:#e3e0d8;--acc:#1f5eff;--acc-fg:#fff;--ok:#11803a;--ok-bg:#e6f4ea;--warn:#8a5a00;--warn-bg:#fdf1d8;--bad:#b3261e;--bad-bg:#fbe7e5;--chip:#efede7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1d1d1b;--fg:#ecebe6;--mut:#a3a199;--line:#33322e;--acc:#7aa2ff;--acc-fg:#0d0d0c;--ok:#6fd08f;--ok-bg:#16301f;--warn:#f0c062;--warn-bg:#33280f;--bad:#ff8a80;--bad-bg:#3a1a17;--chip:#2a2a27}}
+:root[data-theme="dark"]{--bg:#141413;--card:#1d1d1b;--fg:#ecebe6;--mut:#a3a199;--line:#33322e;--acc:#7aa2ff;--acc-fg:#0d0d0c;--ok:#6fd08f;--ok-bg:#16301f;--warn:#f0c062;--warn-bg:#33280f;--bad:#ff8a80;--bad-bg:#3a1a17;--chip:#2a2a27}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:8px 0 10px;letter-spacing:-.02em}
+h2{font-size:22px;margin:40px 0 12px;letter-spacing:-.01em}
+h3{font-size:17px;margin:0}
+p{margin:0 0 12px}
+a{color:var(--acc)}
+.lede{font-size:18px;color:var(--mut);max-width:680px}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.q{margin:0 0 14px}
+.q label.t{display:block;font-weight:600;margin-bottom:6px;font-size:15px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:14px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.sum{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+.pill{font-size:14px;font-weight:600;padding:5px 11px;border-radius:999px}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}.pill.warn{background:var(--warn-bg);color:var(--warn)}.pill.bad{background:var(--bad-bg);color:var(--bad)}
+.grp{margin-top:18px}
+.grp>h3{margin-bottom:8px;font-size:15px;color:var(--mut);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.card.ok{border-left-color:var(--ok)}.card.warn{border-left-color:var(--warn)}.card.bad{border-left-color:var(--bad)}
+.card summary{cursor:pointer;list-style:none;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.card summary::-webkit-details-marker{display:none}
+.card .nm{font-weight:600}
+.chip{font-size:12px;background:var(--chip);color:var(--mut);padding:2px 8px;border-radius:999px}
+.why{margin:6px 0 0;padding-left:18px;font-size:14.5px}
+.why li{margin:2px 0}
+.rule{margin-top:10px;font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:8px}
+.rule q{color:var(--fg)}
+.lock{border:1px dashed var(--line);border-radius:10px;padding:14px;margin-top:10px;color:var(--mut);font-size:15px}
+.btn{display:inline-block;font:inherit;font-weight:600;padding:11px 18px;border-radius:10px;background:var(--acc);color:var(--acc-fg);text-decoration:none;border:0;cursor:pointer}
+.btn.sec{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.price{font-size:30px;font-weight:700}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+ul.plain{padding-left:18px;margin:6px 0 12px}
+.small{font-size:14px;color:var(--mut)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:4px}
+.field .cnt{font-weight:400;color:var(--mut)}
+.field .cnt.over{color:var(--bad)}
+.row{display:flex;gap:6px}
+input[type=text],input[type=url],input[type=email],textarea,select{font:inherit;font-size:15px;width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+textarea{min-height:90px;resize:vertical}
+.copy{font:inherit;font-size:13px;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.tablewrap{overflow-x:auto}
+.bm{display:inline-block;padding:10px 14px;border:2px dashed var(--acc);border-radius:10px;font-weight:700;text-decoration:none;color:var(--acc)}
+footer{margin-top:48px;font-size:14px;color:var(--mut)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Launch-channel rules · verified 2026-11-05</div>
+  <h1>Where can I post my launch?</h1>
+  <p class="lede">Many launch channels quietly reject posts from new accounts or posts written with AI help. Tell this tool your situation and it shows which channels will take your post, which ones won't, and the rule behind each answer, with a link to the source.</p>
+
+  <h2 style="margin-top:28px">Your situation</h2>
+  <div class="panel" id="finder">
+    <div class="q"><label class="t">How old is your account on the platform?</label>
+      <div class="seg" data-k="age"><button data-v="0">Brand-new</button><button data-v="30">Under 90 days</button><button data-v="365">90+ days, some karma</button></div></div>
+    <div class="q"><label class="t">Was your post text written or edited with AI?</label>
+      <div class="seg" data-k="ai"><button data-v="yes">Yes</button><button data-v="no">No</button></div></div>
+    <div class="q"><label class="t">You need people to see it within</label>
+      <div class="seg" data-k="need"><button data-v="24h">24 hours</button><button data-v="week">A week</button><button data-v="any">No rush</button></div></div>
+    <div class="q" style="margin:0"><label class="t">Budget</label>
+      <div class="seg" data-k="budget"><button data-v="zero">$0</button><button data-v="paid">Can pay</button></div></div>
+  </div>
+
+  <div class="sum" id="sum" aria-live="polite"></div>
+  <div id="results"></div>
+  <div id="lockbox"></div>
+
+  
+
+    <h2 id="kit">The full kit: $7, one-time</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3 style="margin-bottom:8px">What you get</h3>
+      <ul class="plain">
+        <li><strong>All 50 channels</strong> instead of the 12 shown here: more subreddits, launch directories with their real queue times and paid fast lanes, Hashnode, Bluesky, Shopify Community and Turkish forums. Every row has its source.</li>
+        <li><strong>Launch profile.</strong> Write your name, tagline (60), short description (160) and long description (500) once. Character counters and one-click copy.</li>
+        <li><strong>Autofill bookmarklet.</strong> On a directory's submit form, one click fills the fields it recognises from your profile. It never presses submit. No extension, no permissions, and nothing leaves your browser.</li>
+        <li><strong>Submission tracker.</strong> Status and date for each channel, saved in your browser, exportable to CSV.</li>
+        <li><strong>The dataset</strong> as CSV and JSON.</li>
+      </ul>
+      <p class="small">Delivered as one HTML file. Works offline. No account, no subscription.</p>
+    </div>
+    <div class="panel">
+      <div class="price">$7</div>
+      <p class="small">one-time · instant download through Gumroad</p>
+      <p><a class="btn" id="buy" href="#kit" target="_blank" rel="noopener">Get the full kit</a></p>
+      <p class="small"><strong>Refunds:</strong> full refund within 14 days for any reason. Reply to your Gumroad receipt or email <a href="mailto:hferrahoglu@gmail.com">hferrahoglu@gmail.com</a>.</p>
+      <p class="small"><strong>For:</strong> makers about to launch who don't want their post removed or stuck in a 50-day queue.<br><strong>Not for:</strong> anyone who needs guaranteed traffic. This tells you where you're allowed to post, not whether the post will do well.</p>
+    </div>
+  </div>
+
+
+  <footer>
+    <p><strong>How this was made.</strong> This tool was researched and built by an AI agent (Claude, by Anthropic) during a public 24-hour experiment, with a human operator, Hamza Ferrahoğlu, who handles anything that needs a person. The full decision log is public: <a href="https://github.com/HFerrahoglu/24h-zero-budget-experiment">github.com/HFerrahoglu/24h-zero-budget-experiment</a>.</p>
+    <p><strong>About the data.</strong> Each row shows its source and whether that source is the platform's own page (<em>primary</em>), an archived copy (<em>archived</em>), or a third-party rules tracker (<em>secondary</em>). Rules change. This snapshot is from 2026-11-05 and future updates aren't promised. Check the source before you post. This isn't legal advice.</p>
+    <p><strong>Privacy.</strong> No cookies, no sign-up, no personal data. Anonymous counts of page loads, filter clicks and buy-button clicks go to a public counter (abacus.jasoncameron.dev), tagged only with the <code>?ref=</code> of the link you came from.</p>
+    <p>Contact: <a href="mailto:hferrahoglu@gmail.com">hferrahoglu@gmail.com</a></p>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const FULL = false;
+const CHANNELS = [{"id":"hn","name":"Hacker News (Show HN)","url":"https://news.ycombinator.com/showhn.html","category":"community","language":"en","audience":"developers, technical founders","cost":"free","cost_note":"Free.","new_account":"closed","min_account_days":null,"new_account_note":"Show HN is temporarily restricted for new accounts (news.ycombinator.com/showlim). Plain link submissions are still possible.","ai_text":"banned","ai_note":"Guidelines: \"Please don't put generated text in HN posts.\" Comments: \"Don't post generated text or AI-edited text.\"","self_promo":"limited","self_promo_note":"Sharing your own work occasionally is fine. Show HN must be something people can try: no landing pages or fundraisers.","time_to_visible":"instant","time_note":"Live immediately; front page depends on early upvotes.","posting_days":null,"quote":"Please don't put generated text in HN posts.","source_url":"https://news.ycombinator.com/newsguidelines.html","source_type":"primary","verified":"2026-11-05","quote_exact":true},{"id":"producthunt","name":"Product Hunt","url":"https://www.producthunt.com/","category":"directory","language":"en","audience":"makers, early adopters","cost":"free","cost_note":"Free to launch.","new_account":"restricted","min_account_days":7,"new_account_note":"New accounts must wait one week before they can post a product.","ai_text":"banned","ai_note":"Commenting guidelines list AI-generated comments as something to avoid: \"No LLMs or Chrome extensions please!\"","self_promo":"allowed","self_promo_note":"It's a launch platform; you need a personal account (no company accounts).","time_to_visible":"same_day","time_note":"Launch day is scheduled; visibility is concentrated in that 24h window.","posting_days":null,"quote":"you will need to wait one week before you can post a product.","source_url":"https://help.producthunt.com/en/articles/481909-how-can-i-get-access-to-post","source_type":"primary","verified":"2026-11-05","quote_exact":true},{"id":"stackoverflow","name":"Stack Overflow","url":"https://stackoverflow.com/help/promotion","category":"forum","language":"en","audience":"developers","cost":"free","cost_note":"Free.","new_account":"unknown","min_account_days":null,"new_account_note":"Reputation needed for links not verified.","ai_text":"banned","ai_note":"\"Generative artificial intelligence … tools may not be used to generate content for Stack Overflow.\"","self_promo":"limited","self_promo_note":"Only inside a genuinely helpful answer, and you must disclose your affiliation.","time_to_visible":"instant","time_note":"Answers appear immediately, but only help people with that exact question.","posting_days":null,"quote":"you must disclose your affiliation in your post.","source_url":"https://stackoverflow.com/help/gen-ai-policy","source_type":"primary","verified":"2026-11-05","quote_exact":true},{"id":"devto","name":"DEV Community (dev.to)","url":"https://dev.to/guidelines-for-ai-assisted-articles-on-dev","category":"publication","language":"en","audience":"developers","cost":"free","cost_note":"Free.","new_account":"unknown","min_account_days":null,"new_account_note":"No published minimum found.","ai_text":"disclose","ai_note":"AI-assisted articles are allowed with disclosure (e.g. #ABotWroteThis), but they must not promote a business, including your own.","self_promo":"limited","self_promo_note":"Posts shouldn't be primarily promotional; AI-assisted ones must not promote your own business at all.","time_to_visible":"instant","time_note":"Published immediately to the feed.","posting_days":null,"quote":"Promote any business, program, or course (including your own).","source_url":"https://dev.to/guidelines-for-ai-assisted-articles-on-dev","source_type":"primary","verified":"2026-11-05","quote_exact":true},{"id":"indiehackers","name":"Indie Hackers","url":"https://www.indiehackers.com/","category":"community","language":"en","audience":"bootstrapped founders","cost":"freemium","cost_note":"Free account; IH+ ($198/yr per a third-party source) reportedly skips the waiting period.","new_account":"restricted","min_account_days":null,"new_account_note":"New free accounts reportedly wait through an anti-spam period before posting (length not published).","ai_text":"unknown","ai_note":"No AI policy found.","self_promo":"unknown","self_promo_note":"Not verified.","time_to_visible":"unknown","time_note":"Depends on the waiting period.","posting_days":null,"quote":"New free accounts wait through an anti-spam period before posting.","source_url":"https://www.profitablefounder.xyz/blog/is-indie-hackers-worth-it","source_type":"secondary","verified":"2026-11-05","quote_exact":true},{"id":"r-sideproject","name":"r/SideProject","url":"https://www.reddit.com/r/SideProject/","category":"community","language":"en","audience":"makers, side-project builders","cost":"free","cost_note":"Free.","new_account":"open","min_account_days":null,"new_account_note":"No published karma/age minimum. Reddit's site-wide spam filters can still silently hide posts from brand-new accounts.","ai_text":"allowed","ai_note":"No AI rule found.","self_promo":"allowed","self_promo_note":"The subreddit exists for sharing your projects. No written rules in the March 2026 snapshot.","time_to_visible":"instant","time_note":"Live immediately; ranking depends on early votes.","posting_days":null,"quote":"Rules list was empty in the archived rules.json (2026-03-06).","source_url":"https://web.archive.org/web/20260306124858/https://www.reddit.com/r/SideProject/about/rules.json","source_type":"archived","verified":"2026-11-05","quote_exact":false},{"id":"r-indiehackers","name":"r/indiehackers","url":"https://www.reddit.com/r/indiehackers/","category":"community","language":"en","audience":"indie founders","cost":"free","cost_note":"Free.","new_account":"open","min_account_days":null,"new_account_note":"No published minimum; site-wide filters apply.","ai_text":"allowed","ai_note":"No AI rule found.","self_promo":"limited","self_promo_note":"One self-promotion post per product, with the Self Promotion flair, framed as a request for feedback.","time_to_visible":"instant","time_note":"Live immediately.","posting_days":null,"quote":"You can self promote your product only one time and you must use the Self Promotion flair.","source_url":"https://web.archive.org/web/20260401023620/https://www.reddit.com/r/indiehackers/about/rules.json","source_type":"archived","verified":"2026-11-05","quote_exact":true},{"id":"r-webdev","name":"r/webdev","url":"https://www.reddit.com/r/webdev/","category":"community","language":"en","audience":"web developers","cost":"free","cost_note":"Free.","new_account":"open","min_account_days":null,"new_account_note":"No published minimum.","ai_text":"banned","ai_note":"Rule 8: LLM-generated posts or comments are removed.","self_promo":"banned","self_promo_note":"\"We do not allow any commercial promotion or solicitation.\" Non-commercial project showcases only on Showoff Saturday.","time_to_visible":"instant","time_note":"Live immediately.","posting_days":"Saturday only (Showoff Saturday)","quote":"We do not allow any commercial promotion or solicitation.","source_url":"https://rankhog.com/subreddits/webdev","source_type":"secondary","verified":"2026-11-05","quote_exact":true},{"id":"r-saas","name":"r/SaaS","url":"https://www.reddit.com/r/SaaS/","category":"community","language":"en","audience":"SaaS founders","cost":"free","cost_note":"Free.","new_account":"restricted","min_account_days":60,"new_account_note":"60-day account age requirement (per a rules tracker).","ai_text":"banned","ai_note":"AI-generated text is not allowed, even if you paste it yourself.","self_promo":"limited","self_promo_note":"Max 1 mention or 3 links every 60 days.","time_to_visible":"instant","time_note":"Live immediately once eligible.","posting_days":null,"quote":"Max 1 mention or 3 links every 60 days.","source_url":"https://rankhog.com/subreddits/saas","source_type":"secondary","verified":"2026-11-05","quote_exact":true},{"id":"r-entrepreneur","name":"r/Entrepreneur","url":"https://www.reddit.com/r/Entrepreneur/","category":"community","language":"en","audience":"entrepreneurs","cost":"free","cost_note":"Free.","new_account":"open","min_account_days":null,"new_account_note":"No published minimum.","ai_text":"banned","ai_note":"\"AI-generated posts or comments are not permitted.\"","self_promo":"banned","self_promo_note":"\"Do not use this community to sell, promote, recruit… or drive traffic.\"","time_to_visible":"instant","time_note":"Live immediately.","posting_days":null,"quote":"AI-generated posts or comments are not permitted.","source_url":"https://rankhog.com/subreddits/entrepreneur","source_type":"secondary","verified":"2026-11-05","quote_exact":true},{"id":"mastodon","name":"Mastodon (mastodon.social)","url":"https://mastodon.social/","category":"social","language":"en","audience":"tech, open-source, privacy-minded","cost":"free","cost_note":"Free.","new_account":"open","min_account_days":null,"new_account_note":"Sign-ups open without approval (16+). Reach depends on hashtags; new accounts have no followers.","ai_text":"disclose","ai_note":"\"use of generative AI must be disclosed\"; \"Accounts may not solely post AI-generated content.\"","self_promo":"unknown","self_promo_note":"No explicit promotion rule on the server rules.","time_to_visible":"instant","time_note":"Instant, but reach is low for a new account.","posting_days":null,"quote":"use of generative AI must be disclosed","source_url":"https://mastodon.social/api/v1/instance/rules","source_type":"primary","verified":"2026-11-05","quote_exact":true},{"id":"uneed","name":"Uneed","url":"https://www.uneed.best/pricing","category":"directory","language":"en","audience":"makers","cost":"freemium","cost_note":"Free queue; $14.99 / $39.99 options to launch sooner.","new_account":"open","min_account_days":null,"new_account_note":"No account-age gate found.","ai_text":"unknown","ai_note":"No AI policy found.","self_promo":"allowed","self_promo_note":"It's a launch directory.","time_to_visible":"months","time_note":"Free launch date is assigned at least 50 days out.","posting_days":null,"quote":"We assign your launch date, at least 50 days out.","source_url":"https://www.uneed.best/pricing","source_type":"primary","verified":"2026-11-05","quote_exact":true}];
+const LOCKED_COUNT = 38;
+const BUY_URL = "#kit";
+
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("on"),1800); }
+
+const state = Object.assign({age:"0", ai:"yes", need:"24h", budget:"zero"}, store.get("wcip_state", {}));
+
+const SPEED = {instant:0, same_day:1, days:2, weeks:3, months:4, unknown:null};
+const NEED_MAX = {"24h":1, "week":2, "any":9};
+const SRC_LABEL = {primary:"primary source", archived:"archived copy", secondary:"third-party tracker"};
+
+function verdict(c, s){
+  const bad=[], warn=[], unk=[];
+  const age = Number(s.age);
+  // account age
+  if (c.new_account === "closed" && age < 90) bad.push(c.new_account_note);
+  else if (c.min_account_days && age < c.min_account_days) bad.push(`Needs an account at least ${c.min_account_days} days old. ${c.new_account_note}`);
+  else if (c.new_account === "restricted" && age < 90 && !c.min_account_days) warn.push(c.new_account_note);
+  else if (c.new_account === "unknown") unk.push("account-age rules");
+  if (age === 0 && c.new_account === "open" && /filter|hide|reach/i.test(c.new_account_note)) warn.push(c.new_account_note);
+  // AI text
+  if (s.ai === "yes"){
+    if (c.ai_text === "banned") bad.push("Bans AI-written text. " + c.ai_note);
+    else if (c.ai_text === "disclose") warn.push("Allowed only with disclosure. " + c.ai_note);
+    else if (c.ai_text === "unknown") unk.push("AI-text policy");
+  }
+  // self promotion
+  if (c.self_promo === "banned") bad.push("No self-promotion. " + c.self_promo_note);
+  else if (c.self_promo === "limited") warn.push(c.self_promo_note);
+  else if (c.self_promo === "unknown") unk.push("self-promotion rules");
+  // speed
+  const sp = SPEED[c.time_to_visible];
+  if (sp === null || sp === undefined) unk.push("time to go live");
+  else if (sp > NEED_MAX[s.need]) bad.push("Too slow for your timeline. " + c.time_note);
+  else if (s.need === "24h" && sp === 1 && c.id !== "producthunt") warn.push(c.time_note);
+  // posting days
+  if (c.posting_days){
+    const day = new Date().toLocaleDateString("en-US",{weekday:"long"});
+    const days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+    const pd = c.posting_days.toLowerCase();
+    if (days.some(d => pd.includes(d))){
+      if (!pd.includes(day.toLowerCase())) (s.need === "24h" ? bad : warn).push(`Posting day: ${c.posting_days}. Today is ${day}.`);
+    } else warn.push(`Posting restriction: ${c.posting_days}.`);
+  }
+  // budget
+  if (s.budget === "zero" && c.cost === "paid") bad.push("Paid only. " + c.cost_note);
+  if (s.budget === "zero" && c.cost === "freemium" && sp !== null && sp > NEED_MAX[s.need]) warn.push("The fast lane costs money: " + c.cost_note);
+  const status = bad.length ? "bad" : (warn.length ? "warn" : "ok");
+  return {status, bad, warn, unk};
+}
+
+function render(){
+  document.querySelectorAll("#finder .seg").forEach(seg => {
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(state[seg.dataset.k] === b.dataset.v)));
+  });
+  const rows = CHANNELS.map(c => ({c, v: verdict(c, state)}));
+  const order = {ok:0, warn:1, bad:2};
+  rows.sort((a,b) => order[a.v.status]-order[b.v.status] || a.c.name.localeCompare(b.c.name));
+  const n = {ok:0,warn:0,bad:0}; rows.forEach(r => n[r.v.status]++);
+  $("#sum").innerHTML = `<span class="pill ok">${n.ok} open</span><span class="pill warn">${n.warn} with caveats</span><span class="pill bad">${n.bad} closed to you</span>`;
+  const groups = [["ok","Open to you"],["warn","Possible, with caveats"],["bad","Closed to you right now"]];
+  $("#results").innerHTML = groups.map(([k,t]) => {
+    const list = rows.filter(r => r.v.status === k);
+    if (!list.length) return "";
+    return `<div class="grp"><h3>${t}</h3>${list.map(r => card(r.c, r.v)).join("")}</div>`;
+  }).join("");
+  if (!FULL && LOCKED_COUNT){
+    $("#lockbox").innerHTML = `<div class="lock"><strong>${LOCKED_COUNT} more channels</strong> are in the full kit: more subreddits, launch directories (BetaList, Fazier, AlternativeTo, SaaSHub, Launching Next…), Hashnode, Bluesky, Shopify Community and Turkish forums. <a href="#kit" onclick="track('kitlink')">See what's in the kit ↓</a></div>`;
+  }
+  store.set("wcip_state", state);
+}
+
+function card(c, v){
+  const reasons = [...v.bad, ...v.warn].map(x => `<li>${esc(x)}</li>`).join("");
+  const unk = v.unk.length ? `<li class="small">Not verified: ${esc(v.unk.join(", "))}.</li>` : "";
+  const okline = (!reasons && !unk) ? `<li>No blocking rule found for your situation.</li>` : "";
+  const ruleLabel = c.quote_exact === false ? "Rule summary" : "Rule";
+  const ruleText = c.quote_exact === false ? esc(c.quote) : `<q>${esc(c.quote)}</q>`;
+  return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span></summary>
+    <ul class="why">${reasons}${unk}${okline}</ul>
+    <div class="rule">${ruleLabel}: ${ruleText}<br>Source: <a href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(new URL(c.source_url).hostname)}</a> · ${esc(SRC_LABEL[c.source_type]||c.source_type)} · checked ${esc(c.verified)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">go to channel</a></div></details>`;
+}
+
+document.querySelectorAll("#finder .seg").forEach(seg => seg.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state[seg.dataset.k] = b.dataset.v; render(); track("demo");
+}));
+
+/* ---------- anonymous counters (free page only) ---------- */
+const NS = "wcip-hf24h";
+const REF = (() => {
+  let r = (new URLSearchParams(location.search).get("ref") || "").toLowerCase().replace(/[^a-z0-9_]/g, "").slice(0, 12);
+  try { if (r) sessionStorage.setItem("wcip_ref", r); else r = sessionStorage.getItem("wcip_ref") || "direct"; } catch (e) { r = r || "direct"; }
+  return r;
+})();
+const SENT = new Set();
+function track(ev){
+  if (location.protocol === "file:" || location.hostname === "localhost" || location.hostname === "127.0.0.1") return;
+  const key = ev + "_" + REF;
+  if (SENT.has(key)) return;
+  SENT.add(key);
+  try { fetch(`https://abacus.jasoncameron.dev/hit/${NS}/${key}`, {mode:"no-cors", keepalive:true}).catch(() => {}); } catch (e) {}
+}
+track("visit");
+document.addEventListener("click", e => { if (e.target.closest("#buy")) track("buy"); });
+
+render();
+</script>
+
+</body>
+</html>

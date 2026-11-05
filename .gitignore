@@ -1,0 +1,9 @@
+dist/full/
+data/channels.full.json
+data/channels.extra.json
+*.zip
+.env
+node_modules/
+package-lock.json
+test/fixtures/
+dist/
