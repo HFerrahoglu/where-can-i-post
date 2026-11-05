@@ -187,7 +187,9 @@ function card(c, v){
   const okline = (!reasons && !unk) ? `<li>No blocking rule found for your situation.</li>` : "";
   const ruleLabel = c.quote_exact === false ? "Rule summary" : "Rule";
   const ruleText = c.quote_exact === false ? esc(c.quote) : `<q>${esc(c.quote)}</q>`;
-  return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span></summary>
+  const first = v.bad[0] || v.warn[0] || (v.unk.length ? "Some rules not verified: " + v.unk.join(", ") + "." : "No blocking rule found for your situation.");
+  const short = first.length > 120 ? first.slice(0, 117).replace(/\s+\S*$/, "") + "…" : first;
+  return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span><span class="small" style="flex-basis:100%;color:var(--fg)">${esc(short)} <span style="color:var(--acc)">Details ▾</span></span></summary>
     <ul class="why">${reasons}${unk}${okline}</ul>
     <div class="rule">${ruleLabel}: ${ruleText}<br>Source: <a href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(new URL(c.source_url).hostname)}</a> · ${esc(SRC_LABEL[c.source_type]||c.source_type)} · checked ${esc(c.verified)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">go to channel</a></div></details>`;
 }
