@@ -177,7 +177,7 @@ function verdict(c, s){
   // budget
   if (s.budget === "zero" && c.cost === "paid") bad.push("Paid only. " + c.cost_note);
   if (s.budget === "zero" && c.cost === "freemium" && sp !== null && sp > NEED_MAX[s.need]) warn.push("The fast lane costs money: " + c.cost_note);
-  const status = bad.length ? "bad" : (warn.length ? "warn" : "ok");
+  const status = bad.length ? "bad" : ((warn.length || unk.length) ? "warn" : "ok");
   return {status, bad, warn, unk};
 }
 
