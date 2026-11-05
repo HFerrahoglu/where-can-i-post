@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Where Can I Post?</title>
 <meta name="description" content="Which launch channels will actually accept your post with a new account, AI-assisted text and a $0 budget. Rules verified 2026-11-05, every row linked to its source.">
+<meta property="og:title" content="Where can I post my launch?">
+<meta property="og:description" content="New account + AI-assisted text + $0 + 24h: 27 of 50 launch channels closed, 22 with caveats. Every rule sourced. Free finder.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hferrahoglu.github.io/where-can-i-post/">
+<meta property="og:image" content="https://hferrahoglu.github.io/where-can-i-post/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--bg:#f7f6f2;--card:#ffffff;--fg:#1b1b1a;--mut:#62605a;--line:#e3e0d8;--acc:#1f5eff;--acc-fg:#fff;--ok:#11803a;--ok-bg:#e6f4ea;--warn:#8a5a00;--warn-bg:#fdf1d8;--bad:#b3261e;--bad-bg:#fbe7e5;--chip:#efede7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1d1d1b;--fg:#ecebe6;--mut:#a3a199;--line:#33322e;--acc:#7aa2ff;--acc-fg:#0d0d0c;--ok:#6fd08f;--ok-bg:#16301f;--warn:#f0c062;--warn-bg:#33280f;--bad:#ff8a80;--bad-bg:#3a1a17;--chip:#2a2a27}}
@@ -36,6 +42,7 @@ a{color:var(--acc)}
 .card summary::-webkit-details-marker{display:none}
 .card .nm{font-weight:600}
 .chip{font-size:12px;background:var(--chip);color:var(--mut);padding:2px 8px;border-radius:999px}
+.chip.fh{background:var(--ok-bg);color:var(--ok);font-weight:600}
 .why{margin:6px 0 0;padding-left:18px;font-size:14.5px}
 .why li{margin:2px 0}
 .rule{margin-top:10px;font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:8px}
@@ -189,8 +196,10 @@ function card(c, v){
   const ruleText = c.quote_exact === false ? esc(c.quote) : `<q>${esc(c.quote)}</q>`;
   const first = v.bad[0] || v.warn[0] || (v.unk.length ? "Some rules not verified: " + v.unk.join(", ") + "." : "No blocking rule found for your situation.");
   const short = first.length > 120 ? first.slice(0, 117).replace(/\s+\S*$/, "") + "…" : first;
-  return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span><span class="small" style="flex-basis:100%;color:var(--fg)">${esc(short)} <span style="color:var(--acc)">Details ▾</span></span></summary>
-    <ul class="why">${reasons}${unk}${okline}</ul>
+  const fh = c.firsthand ? `<span class="chip fh">tried with a new account</span>` : "";
+  const fhLine = c.firsthand ? `<div class="rule"><strong>What happened when we tried (2026-11-05):</strong> ${esc(c.firsthand)}</div>` : "";
+  return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${fh}${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span><span class="small" style="flex-basis:100%;color:var(--fg)">${esc(short)} <span style="color:var(--acc)">Details ▾</span></span></summary>
+    <ul class="why">${reasons}${unk}${okline}</ul>${fhLine}
     <div class="rule">${ruleLabel}: ${ruleText}<br>Source: <a href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(new URL(c.source_url).hostname)}</a> · ${esc(SRC_LABEL[c.source_type]||c.source_type)} · checked ${esc(c.verified)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">go to channel</a></div></details>`;
 }
 

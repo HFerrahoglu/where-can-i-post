@@ -43,6 +43,9 @@ console.log("1) Free page: finder logic");
   const quotes = [...d.querySelectorAll(".rule")].map(r => r.textContent);
   ok(quotes.every(q => /Source: /.test(q) && /checked 2026-11-05/.test(q)), "every card shows source + date");
   ok(quotes.some(q => /^Rule summary:/.test(q.trim())), "non-verbatim rows labelled 'Rule summary'");
+  const sp = [...d.querySelectorAll("#results details.card")].find(x => x.querySelector(".nm").textContent === "r/SideProject");
+  ok(!!sp.querySelector(".chip.fh") && /removed right away by Reddit/.test(sp.textContent), "first-hand badge + note on r/SideProject");
+  ok(!!d.querySelector('meta[property="og:image"]'), "og:image meta present");
 }
 
 console.log("2) Full kit: renders all channels, profile, bookmarklet, tracker, export");

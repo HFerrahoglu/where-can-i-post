@@ -122,7 +122,8 @@
   "quote": "You can't post just yet. Publishing is open to established members.",
   "source_url": "https://www.indiehackers.com/new-post",
   "source_type": "primary",
-  "verified": "2026-11-05"
+  "verified": "2026-11-05",
+  "firsthand": "Opened \"New post\" with a brand-new account: \"You can't post just yet.\" Commenting worked immediately."
  },
  {
   "id": "r-sideproject",
@@ -147,7 +148,8 @@
   "quote": "Rules list was empty in the archived rules.json (2026-03-06).",
   "source_url": "https://web.archive.org/web/20260306124858/https://www.reddit.com/r/SideProject/about/rules.json",
   "source_type": "archived",
-  "verified": "2026-11-05"
+  "verified": "2026-11-05",
+  "firsthand": "Posted a text post with links from a brand-new account: removed right away by Reddit's site-wide filters (\"Sorry, this post was removed by Reddit's filters\"). The post form also rejects \"$\" in titles."
  },
  {
   "id": "r-indiehackers",
