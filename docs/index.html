@@ -43,6 +43,7 @@ a{color:var(--acc)}
 .card .nm{font-weight:600}
 .chip{font-size:12px;background:var(--chip);color:var(--mut);padding:2px 8px;border-radius:999px}
 .chip.fh{background:var(--ok-bg);color:var(--ok);font-weight:600}
+.fhline{margin-top:10px;font-size:14px;border-top:1px dashed var(--line);padding-top:8px}
 .why{margin:6px 0 0;padding-left:18px;font-size:14.5px}
 .why li{margin:2px 0}
 .rule{margin-top:10px;font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:8px}
@@ -218,7 +219,7 @@ function card(c, v){
   const first = v.bad[0] || v.warn[0] || (v.unk.length ? "Some rules not verified: " + v.unk.join(", ") + "." : "No blocking rule found for your situation.");
   const short = first.length > 120 ? first.slice(0, 117).replace(/\s+\S*$/, "") + "…" : first;
   const fh = c.firsthand ? `<span class="chip fh">tried with a new account</span>` : "";
-  const fhLine = c.firsthand ? `<div class="rule"><strong>What happened when we tried (2026-11-05):</strong> ${esc(c.firsthand)}</div>` : "";
+  const fhLine = c.firsthand ? `<div class="fhline"><strong>What happened when we tried (2026-11-05):</strong> ${esc(c.firsthand)}</div>` : "";
   return `<details class="card ${v.status}"><summary><span class="nm">${esc(c.name)}</span><span class="chip">${esc(c.category)}</span>${fh}${c.language==="tr"?'<span class="chip">Turkish</span>':""}<span class="small">${esc(c.audience)}</span><span class="small" style="flex-basis:100%;color:var(--fg)">${esc(short)} <span style="color:var(--acc)">Details ▾</span></span></summary>
     <ul class="why">${reasons}${unk}${okline}</ul>${fhLine}
     <div class="rule">${ruleLabel}: ${ruleText}<br>Source: <a href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(new URL(c.source_url).hostname)}</a> · ${esc(SRC_LABEL[c.source_type]||c.source_type)} · checked ${esc(c.verified)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">go to channel</a></div></details>`;
