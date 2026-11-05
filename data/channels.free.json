@@ -150,7 +150,7 @@
   "source_url": "https://web.archive.org/web/20260306124858/https://www.reddit.com/r/SideProject/about/rules.json",
   "source_type": "archived",
   "verified": "2026-11-05",
-  "firsthand": "Posted a text post with links from a brand-new account: removed right away by Reddit's site-wide filters (\"Sorry, this post was removed by Reddit's filters\"). The post form also rejects \"$\" in titles."
+  "firsthand": "Posted a text post with links from a brand-new account: removed right away by Reddit's site-wide filters (\"Sorry, this post was removed by Reddit's filters\"). When we checked again about 5 hours later it was visible, apparently approved by a moderator. The post form also rejects \"$\" in titles."
  },
  {
   "id": "r-indiehackers",
@@ -162,9 +162,10 @@
   "audience": "indie founders",
   "cost": "free",
   "cost_note": "Free.",
-  "new_account": "open",
+  "new_account": "restricted",
+  "brand_new": "closed",
   "min_account_days": null,
-  "new_account_note": "No published minimum; site-wide filters apply.",
+  "new_account_note": "Reddit's contributor requirements block accounts that are too new (the exact age isn't shown) and also require comment karma earned in r/indiehackers itself.",
   "ai_text": "allowed",
   "ai_note": "No AI rule found.",
   "self_promo": "limited",
@@ -175,7 +176,8 @@
   "quote": "You can self promote your product only one time and you must use the Self Promotion flair.",
   "source_url": "https://web.archive.org/web/20260401023620/https://www.reddit.com/r/indiehackers/about/rules.json",
   "source_type": "archived",
-  "verified": "2026-11-05"
+  "verified": "2026-11-05",
+  "firsthand": "Tried to post from a 1-day-old account: Reddit showed \"You can't contribute in this community yet\" (\"Your account isn't old enough yet\" and \"You have 0 comment karma. Earn more by commenting in r/indiehackers\")."
  },
  {
   "id": "r-webdev",

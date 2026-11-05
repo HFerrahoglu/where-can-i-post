@@ -6,7 +6,7 @@
 <title>Where Can I Post?</title>
 <meta name="description" content="Which launch channels will actually accept your post with a new account, AI-assisted text and a $0 budget. Rules verified 2026-11-05, every row linked to its source.">
 <meta property="og:title" content="Where can I post my launch?">
-<meta property="og:description" content="New account + AI-assisted text + $0 + 24h: 28 of 50 launch channels closed, 21 with caveats. Every rule sourced. Free finder.">
+<meta property="og:description" content="New account + AI-assisted text + $0 + 24h: 29 of 50 launch channels closed, 20 with caveats. Every rule sourced. Free finder.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hferrahoglu.github.io/where-can-i-post/">
 <meta property="og:image" content="https://hferrahoglu.github.io/where-can-i-post/og.png">
@@ -133,6 +133,7 @@ function verdict(c, s){
   const age = Number(s.age);
   // account age
   if (c.new_account === "closed" && age < 90) bad.push(c.new_account_note);
+  else if (age === 0 && c.brand_new === "closed") bad.push(c.new_account_note);
   else if (c.min_account_days && age < c.min_account_days) bad.push(`Needs an account at least ${c.min_account_days} days old. ${c.new_account_note}`);
   else if (c.new_account === "restricted" && age < 90 && !c.min_account_days) warn.push(c.new_account_note);
   else if (c.new_account === "unknown") unk.push("account-age rules");
