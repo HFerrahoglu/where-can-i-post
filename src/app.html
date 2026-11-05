@@ -6,7 +6,7 @@
 <title>Where Can I Post?</title>
 <meta name="description" content="Which launch channels will actually accept your post with a new account, AI-assisted text and a $0 budget. Rules verified 2026-11-05, every row linked to its source.">
 <meta property="og:title" content="Where can I post my launch?">
-<meta property="og:description" content="New account + AI-assisted text + $0 + 24h: 27 of 50 launch channels closed, 22 with caveats. Every rule sourced. Free finder.">
+<meta property="og:description" content="New account + AI-assisted text + $0 + 24h: 28 of 50 launch channels closed, 21 with caveats. Every rule sourced. Free finder.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hferrahoglu.github.io/where-can-i-post/">
 <meta property="og:image" content="https://hferrahoglu.github.io/where-can-i-post/og.png">
@@ -140,6 +140,7 @@ function verdict(c, s){
   // AI text
   if (s.ai === "yes"){
     if (c.ai_text === "banned") bad.push("Bans AI-written text. " + c.ai_note);
+    else if (c.ai_promo === "banned") bad.push("AI-assisted posts may not promote your own product. " + c.ai_note);
     else if (c.ai_text === "disclose") warn.push("Allowed only with disclosure. " + c.ai_note);
     else if (c.ai_text === "unknown") unk.push("AI-text policy");
   }
